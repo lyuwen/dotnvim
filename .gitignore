@@ -1,0 +1,37 @@
+# Ignore lazy.nvim plugin directory (will be auto-installed)
+lazy-lock.json
+
+# Ignore plugin data
+plugin/
+
+# Ignore LSP and Mason data
+mason/
+lsp/
+
+# Ignore undo history
+undodir/
+
+# Ignore swap files
+*.swp
+*.swo
+*~
+
+# Ignore session files
+Session.vim
+.session
+
+# Ignore local customizations
+*.local.lua
+local.lua
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore backup files
+*.bak
+*.backup
+
+# Keep these directories but ignore their contents
+spell/*
+!spell/.gitkeep
