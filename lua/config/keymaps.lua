@@ -26,6 +26,12 @@ keymap('n', '<leader>k', '<C-W><C-K>', opts)
 keymap('n', '<leader>l', '<C-W><C-L>', opts)
 keymap('n', '<leader>h', '<C-W><C-H>', opts)
 
+-- Terminal mode navigation - exit terminal and move to window
+keymap('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Exit terminal and move left' })
+keymap('t', '<C-j>', '<C-\\><C-n><C-w>j', { desc = 'Exit terminal and move down' })
+keymap('t', '<C-k>', '<C-\\><C-n><C-w>k', { desc = 'Exit terminal and move up' })
+keymap('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Exit terminal and move right' })
+
 -- ============================================================================
 -- Tab Navigation (Ctrl + Left/Right, line 239-240)
 -- ============================================================================
