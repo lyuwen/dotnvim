@@ -86,3 +86,7 @@ keymap('n', '<leader>D', ':lua vim.lsp.buf.hover()<CR>', opts)        -- Hover d
 
 -- Neoterm toggle (line 190, nvim-specific)
 keymap('n', '<leader>t', ':Ttoggle<CR>', opts)
+
+-- Terminal in splits
+keymap('n', '<leader>th', ':split | terminal<CR>', { desc = 'Terminal in horizontal split' })
+keymap('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Terminal in vertical split' })
