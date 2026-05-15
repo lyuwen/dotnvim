@@ -87,6 +87,31 @@ keymap('n', '<leader>D', ':lua vim.lsp.buf.hover()<CR>', opts)        -- Hover d
 -- Neoterm toggle (line 190, nvim-specific)
 keymap('n', '<leader>t', ':Ttoggle<CR>', opts)
 
--- Terminal in splits
-keymap('n', '<leader>th', ':split | terminal<CR>', { desc = 'Terminal in horizontal split' })
-keymap('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Terminal in vertical split' })
+-- Terminal in splits with auto-close
+keymap('n', '<leader>th', function()
+  vim.cmd('split')
+  vim.cmd('terminal')
+  vim.cmd('startinsert')
+  -- Auto-close terminal buffer when shell exits
+  vim.api.nvim_create_autocmd('TermClose', {
+    buffer = vim.api.nvim_get_current_buf(),
+    callback = function()
+      vim.cmd('bdelete!')
+    end,
+    once = true,
+  })
+end, { desc = 'Terminal in horizontal split (auto-close)' })
+
+keymap('n', '<leader>tv', function()
+  vim.cmd('vsplit')
+  vim.cmd('terminal')
+  vim.cmd('startinsert')
+  -- Auto-close terminal buffer when shell exits
+  vim.api.nvim_create_autocmd('TermClose', {
+    buffer = vim.api.nvim_get_current_buf(),
+    callback = function()
+      vim.cmd('bdelete!')
+    end,
+    once = true,
+  })
+end, { desc = 'Terminal in vertical split (auto-close)' })
