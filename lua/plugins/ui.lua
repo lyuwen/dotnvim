@@ -40,4 +40,37 @@ return {
 
   -- Icons
   { 'nvim-tree/nvim-web-devicons' },
+
+  -- Which-key: shows keybinding popup overlay
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    config = function()
+      local wk = require('which-key')
+      wk.setup({
+        preset = 'modern',
+        delay = 500,
+        plugins = {
+          marks = true,
+          registers = true,
+          spelling = {
+            enabled = true,
+            suggestions = 20,
+          },
+        },
+        win = {
+          border = 'rounded',
+          padding = { 1, 2 },
+        },
+      })
+
+      -- Register leader key groups for better organization
+      wk.add({
+        { '<leader>a', group = 'AI/Claude' },
+        { '<leader>n', group = 'NvimTree' },
+        { '<leader>t', group = 'Timestamp/Terminal' },
+        { '<leader>g', group = 'Go to/Git' },
+      })
+    end,
+  },
 }

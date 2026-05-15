@@ -68,12 +68,27 @@ Migrated from `~/.vim/vimrc` to modern NeoVim with Lua configuration.
 #### Git
 - Standard vim-fugitive commands (`:Git`, `:Gstatus`, etc.)
 
+#### AI Assistant (Claude Code)
+- `<leader>ac` - Toggle Claude terminal
+- `<leader>af` - Focus Claude terminal
+- `<leader>ar` - Resume Claude session
+- `<leader>aC` - Continue Claude session
+- `<leader>am` - Select Claude model
+- `<leader>ab` - Add current buffer to context
+- `<leader>as` - Send visual selection to Claude (visual mode)
+- `<leader>aa` - Accept diff
+- `<leader>ad` - Deny diff
+
+#### Quick Reference
+- `<leader>?` - Show which-key popup (displays all available keybindings)
+
 ### Plugins
 
 #### UI
 - **solarized.nvim** - Solarized colorscheme
 - **lualine.nvim** - Modern statusline (replaces vim-airline)
 - **nvim-web-devicons** - File icons
+- **which-key.nvim** - Keybinding popup overlay (shows available shortcuts)
 
 #### Editor
 - **nvim-tree.lua** - File explorer (replaces NERDTree)
@@ -96,6 +111,10 @@ Migrated from `~/.vim/vimrc` to modern NeoVim with Lua configuration.
 - **vim-fugitive** - Git integration
 - **gv.vim** - Git commit browser
 - **gitsigns.nvim** - Git signs in gutter
+
+#### AI
+- **claudecode.nvim** - Claude Code AI assistant integration
+- **snacks.nvim** - Enhanced terminal support for Claude Code
 
 ## Installation
 
